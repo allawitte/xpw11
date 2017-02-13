@@ -24,7 +24,7 @@ suite('When calculator gets', function(){
     suite(' a single number', function () {
         test('- returns this number', function (){
             const calculator = createCalculator();
-            let sum = calculator.add(5);
+            let sum = calculator.add('5');
             assert.equal(sum, 5);
         });
     });

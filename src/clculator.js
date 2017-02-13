@@ -11,6 +11,9 @@ class Calculator {
         if (this.isOne(string)) {
             return 1;
         }
+        if (!isNaN(parseInt(string))) {
+            return parseInt(string);
+        }
 
     }
 
