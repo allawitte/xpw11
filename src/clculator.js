@@ -21,7 +21,6 @@ class Calculator {
 
     }
     parseInput(string){
-        var delimiter = '\n,';
         if((string.indexOf('\n') - string.indexOf(',')) == 1) {
             return true;
         }
