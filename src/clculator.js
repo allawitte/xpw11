@@ -14,14 +14,18 @@ class Calculator {
         }
 
         var args = string.split(',');
-        if(this.isSingleNumber(args[0]) && this.isSingleNumber(args[1])){
+        if (this.isNumbersArr(args)) {
             return parseInt(args[0]) + parseInt(args[1]);
         }
 
     }
 
-    isSingleNumber(string){
-        if(string.match(/,/)){
+    isNumbersArr(arr) {
+        return arr.every(this.isSingleNumber)
+    }
+
+    isSingleNumber(string) {
+        if (string.match(/,/)) {
             return false;
         }
         if (!isNaN(parseInt(string))) {
