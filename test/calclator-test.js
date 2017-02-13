@@ -25,7 +25,7 @@ suite('When calculator gets', function(){
         test('- returns 33', function (){
             const calculator = createCalculator();
             let sum = calculator.add('22, 11');
-            assert.equal(sum, 33);
+            assert.equal(sum, 22 + 11);
         });
     });
 
@@ -33,7 +33,15 @@ suite('When calculator gets', function(){
         test('- returns 33', function (){
             const calculator = createCalculator();
             let sum = calculator.add('22\n11');
-            assert.equal(sum, 33);
+            assert.equal(sum, 11 + 22);
+        });
+    });
+
+    suite('1,2,3,4,5', function () {
+        test('- returns 33', function (){
+            const calculator = createCalculator();
+            let sum = calculator.add('1,2,3,4,5');
+            assert.equal(sum, 1+2+3+4+5);
         });
     });
 });
