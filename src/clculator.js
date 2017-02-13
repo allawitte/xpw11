@@ -1,7 +1,13 @@
 'use strict';
 class Calculator {
-    add(){
-        return 0;
+    add(string){
+        if(!string){
+            return 0;
+        }
+        if(string == 1){
+            return 1;
+        }
+
     }
 }
 

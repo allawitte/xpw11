@@ -13,7 +13,7 @@ suite('When calculator gets', function(){
     suite(' 1', function () {
         test('- returns 1', function (){
             const calculator = new Calculator();
-            let sum = calculator.add();
+            let sum = calculator.add(1);
             assert.equal(sum, 1);
         });
     });
