@@ -15,13 +15,17 @@ class Calculator {
 
         var args = string.split(',');
         if (this.isNumbersArr(args)) {
-            return parseInt(args[0]) + parseInt(args[1]);
+            return this.arrSum(args);
         }
 
     }
 
     isNumbersArr(arr) {
         return arr.every(this.isSingleNumber)
+    }
+
+    arrSum(arr){
+       return arr.reduce((sum, item) => {return sum + parseInt(item)},0);
     }
 
     isSingleNumber(string) {
