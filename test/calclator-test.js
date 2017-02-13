@@ -60,6 +60,14 @@ suite('When calculator gets', function(){
             assert.equal(sum, 'Wrong delimiter');
         });
     });
+
+    suite('//;\\n1;2', function () {
+        test('- returns Wrong delimiter', function (){
+            const calculator = createCalculator();
+            let sum = calculator.add('//;\n1;2');
+            assert.equal(sum, 3);
+        });
+    });
 });
 
 
