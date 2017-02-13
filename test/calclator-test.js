@@ -44,6 +44,14 @@ suite('When calculator gets', function(){
             assert.equal(sum, 1+2+3+4+5);
         });
     });
+
+    suite('1\\n2,3', function () {
+        test('- returns 6', function (){
+            const calculator = createCalculator();
+            let sum = calculator.add('1\n2,3');
+            assert.equal(sum, 1 + 2 + 3);
+        });
+    });
 });
 
 
