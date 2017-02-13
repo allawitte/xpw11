@@ -13,25 +13,30 @@ class Calculator {
             return parseInt(string);
         }
 
-        var args = string.split(/[\n,]/);
-        console.log('args', args);
-        if (this.isNumbersArr(args)) {
-            return this.arrSum(args);
-        }
+        return this.parseMultSum(string.split(/[\n,]/));
 
+
+    }
+
+    parseMultSum(arr) {
+        console.log('arr', arr);
+        if (this.isNumbersArr(arr)) {
+            return this.arrSum(arr);
+        }
     }
 
     isNumbersArr(arr) {
         return arr.every(this.isSingleNumber)
     }
 
-    arrSum(arr){
-       return arr.reduce((sum, item) => {return sum + parseInt(item)},0);
+    arrSum(arr) {
+        return arr.reduce((sum, item) => {
+            return sum + parseInt(item)
+        }, 0);
     }
 
     isSingleNumber(string) {
         if (string.match(/[\n,]/)) {
-            console.log('not single');
             return false;
         }
         if (!isNaN(parseInt(string))) {
