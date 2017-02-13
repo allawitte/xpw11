@@ -28,6 +28,14 @@ suite('When calculator gets', function(){
             assert.equal(sum, 33);
         });
     });
+
+    suite(' 22 \\n 11', function () {
+        test('- returns 33', function (){
+            const calculator = createCalculator();
+            let sum = calculator.add('22 \\n 11');
+            assert.equal(sum, 33);
+        });
+    });
 });
 
 
