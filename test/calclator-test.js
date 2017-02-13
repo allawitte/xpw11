@@ -1,6 +1,7 @@
 'use strict';
 var assert = require('chai').assert;
 const Calculator = require('../src/clculator');
+
 suite('When calculator gets', function(){
     suite(' empty input', function () {
         test('- returns 0', function (){

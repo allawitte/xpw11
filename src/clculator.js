@@ -1,13 +1,33 @@
 'use strict';
 class Calculator {
-    add(string){
-        if(!string){
-            return 0;
+    constructor() {
+        this._default = 0;
+    }
+
+    add(string) {
+        if (this.isEmpty(string)) {
+            return this._default;
         }
-        if(string == 1){
+        if (this.isOne(string)) {
             return 1;
         }
 
+    }
+
+    isEmpty(string) {
+        if (!string) {
+            return true;
+        }
+        return false;
+
+    }
+
+    isOne(string) {
+        if (string == 1) {
+            return true
+        }
+        return false;
+        
     }
 }
 
