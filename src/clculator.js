@@ -13,7 +13,8 @@ class Calculator {
             return parseInt(string);
         }
 
-        var args = string.split(',');
+        var args = string.split(/[\n,]/);
+        console.log('args', args);
         if (this.isNumbersArr(args)) {
             return this.arrSum(args);
         }
@@ -29,7 +30,8 @@ class Calculator {
     }
 
     isSingleNumber(string) {
-        if (string.match(/,/)) {
+        if (string.match(/[\n,]/)) {
+            console.log('not single');
             return false;
         }
         if (!isNaN(parseInt(string))) {
