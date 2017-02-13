@@ -11,10 +11,17 @@ class Calculator {
         if (this.isOne(string)) {
             return 1;
         }
-        if (!isNaN(parseInt(string))) {
+        if (this.isSingleNumber(string)) {
             return parseInt(string);
         }
 
+    }
+
+    isSingleNumber(string){
+        if (!isNaN(parseInt(string))) {
+            return true;
+        }
+        return false;
     }
 
     isEmpty(string) {
