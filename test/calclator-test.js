@@ -52,6 +52,14 @@ suite('When calculator gets', function(){
             assert.equal(sum, 1 + 2 + 3);
         });
     });
+
+    suite('1,\n', function () {
+        test('- returns Input Error', function (){
+            const calculator = createCalculator();
+            let sum = calculator.add('1,\n');
+            assert.equal(sum, 'Input Error');
+        });
+    });
 });
 
 
