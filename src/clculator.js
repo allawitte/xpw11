@@ -8,9 +8,7 @@ class Calculator {
         if (this.isEmpty(string)) {
             return this._default;
         }
-        if (this.isOne(string)) {
-            return 1;
-        }
+
         if (this.isSingleNumber(string)) {
             return parseInt(string);
         }
@@ -32,13 +30,6 @@ class Calculator {
 
     }
 
-    isOne(string) {
-        if (string == 1) {
-            return true
-        }
-        return false;
-        
-    }
 }
 
 module.exports = Calculator;
