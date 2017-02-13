@@ -13,14 +13,6 @@ suite('When calculator gets', function(){
         });
     });
 
-    suite(' 1', function () {
-        test('- returns 1', function (){
-            const calculator = createCalculator();
-            let sum = calculator.add(1);
-            assert.equal(sum, 1);
-        });
-    });
-
     suite(' a single number', function () {
         test('- returns this number', function (){
             const calculator = createCalculator();
