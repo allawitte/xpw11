@@ -12,14 +12,23 @@ class Calculator {
         if (this.isSingleNumber(string)) {
             return parseInt(string);
         }
+        if(this.parseInput(string)){
+            return 'Wrong delimiter'
+        }
 
         return this.parseMultSum(string.split(/[\n,]/));
 
 
     }
+    parseInput(string){
+        var delimiter = '\n,';
+        if((string.indexOf('\n') - string.indexOf(',')) == 1) {
+            return true;
+        }
+    }
 
     parseMultSum(arr) {
-        console.log('arr', arr);
+
         if (this.isNumbersArr(arr)) {
             return this.arrSum(arr);
         }

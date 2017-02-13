@@ -53,11 +53,11 @@ suite('When calculator gets', function(){
         });
     });
 
-    suite('1,\n', function () {
-        test('- returns Input Error', function (){
+    suite('1,\\n', function () {
+        test('- returns Wrong delimiter', function (){
             const calculator = createCalculator();
             let sum = calculator.add('1,\n');
-            assert.equal(sum, 'Input Error');
+            assert.equal(sum, 'Wrong delimiter');
         });
     });
 });
