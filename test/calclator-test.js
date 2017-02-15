@@ -68,6 +68,14 @@ suite('When calculator gets', function(){
             assert.equal(sum, 1 + 2);
         });
     });
+
+    suite('negative value', function () {
+        test('- returns error', function (){
+            const calculator = createCalculator();
+            let sum = calculator.add('-2');
+            assert.equal(sum, 'negatives not allowed');
+        });
+    });
 });
 
 
