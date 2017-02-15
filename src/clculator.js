@@ -10,7 +10,7 @@ class Calculator {
         }
 
         if (this.isSingleNumber(string)) {
-            return parseInt(string);
+            return this._parseInt(string);
         }
         if (this.wrongInputDelimiter(string)) {
             return 'Wrong delimiter'
@@ -19,6 +19,20 @@ class Calculator {
         return this.parseMultSum(this._delimiter(string));
 
 
+    }
+    _parseInt(string){
+        var value = parseInt(string);
+        if(this.isNegative(value)){
+            return this.isNegative(value);
+        }
+        return value;
+    }
+
+    isNegative(value){
+        if(value < 0){
+            return 'negatives not allowed';
+        }
+        return false;
     }
 
     _delimiter(string) {
