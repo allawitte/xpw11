@@ -2,6 +2,7 @@
 class Calculator {
     constructor() {
         this._default = 0;
+        this._negative = 'negatives not allowed';
     }
 
     add(string) {
@@ -32,11 +33,11 @@ class Calculator {
     isNegative(value) {
         if (Array.isArray(value)) {
             if (value.some(item => item < 0)) {
-                return 'negatives not allowed';
+                return this._negative;
             }
         }
         if (value < 0) {
-            return 'negatives not allowed';
+            return this._negative;
         }
         return false;
     }
