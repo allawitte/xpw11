@@ -12,18 +12,45 @@ class Calculator {
         if (this.isSingleNumber(string)) {
             return parseInt(string);
         }
-        if(this.parseInput(string)){
+        if (this.parseInput(string)) {
             return 'Wrong delimiter'
         }
 
-        return this.parseMultSum(string.split(/[\n,]/));
+        return this.parseMultSum(this._delimiter(string));
 
 
     }
-    parseInput(string){
-        if((string.indexOf('\n') - string.indexOf(',')) == 1) {
+
+    _delimiter(string) {
+        let parseObj = this.isDelimiterSeparateLIne(string);
+        if (parseObj) {
+            return parseObj.data.split(parseObj.delimiter);
+
+        }
+        return string.split(/[\n,]/)
+    }
+
+
+    isDelimiterSeparateLIne(string) {
+        let match = string.match(/^\/\//);
+        if (match) {
+            if (match.index == 0) {
+                var delimiter = string[2];
+                var data = string.slice(4);
+                return {
+                    'delimiter': delimiter,
+                    'data': data
+                }
+            }
+        }
+        return false;
+    }
+
+    parseInput(string) {
+        if ((string.indexOf('\n') - string.indexOf(',')) == 1) {
             return true;
         }
+
     }
 
     parseMultSum(arr) {
@@ -31,6 +58,7 @@ class Calculator {
         if (this.isNumbersArr(arr)) {
             return this.arrSum(arr);
         }
+
     }
 
     isNumbersArr(arr) {

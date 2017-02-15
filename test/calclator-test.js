@@ -62,10 +62,10 @@ suite('When calculator gets', function(){
     });
 
     suite('//;\\n1;2', function () {
-        test('- returns Wrong delimiter', function (){
+        test('- returns 3', function (){
             const calculator = createCalculator();
             let sum = calculator.add('//;\n1;2');
-            assert.equal(sum, 3);
+            assert.equal(sum, 1 + 2);
         });
     });
 });
