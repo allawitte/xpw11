@@ -32,8 +32,7 @@ class Calculator {
 
 
     isDelimiterSeparateLine(string) {
-        let match = string.match(/^\/\//);
-        if (match) {
+        if (string.match(/^\/\//)) {
                 var delimiter = string[2];
                 var data = string.slice(4);
                 return {
