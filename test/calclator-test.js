@@ -76,6 +76,14 @@ suite('When calculator gets', function(){
             assert.equal(sum, 'negatives not allowed');
         });
     });
+
+    suite('//;\\n-1;2', function () {
+        test('- returns 3', function (){
+            const calculator = createCalculator();
+            let sum = calculator.add('//;\n-1;2');
+            assert.equal(sum, 'negatives not allowed');
+        });
+    });
 });
 
 
