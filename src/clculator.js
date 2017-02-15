@@ -12,7 +12,7 @@ class Calculator {
         if (this.isSingleNumber(string)) {
             return parseInt(string);
         }
-        if (this.parseInput(string)) {
+        if (this.wrongInputDelimiter(string)) {
             return 'Wrong delimiter'
         }
 
@@ -34,7 +34,6 @@ class Calculator {
     isDelimiterSeparateLIne(string) {
         let match = string.match(/^\/\//);
         if (match) {
-            if (match.index == 0) {
                 var delimiter = string[2];
                 var data = string.slice(4);
                 return {
@@ -42,11 +41,10 @@ class Calculator {
                     'data': data
                 }
             }
-        }
         return false;
     }
 
-    parseInput(string) {
+    wrongInputDelimiter(string) {
         if ((string.indexOf('\n') - string.indexOf(',')) == 1) {
             return true;
         }
