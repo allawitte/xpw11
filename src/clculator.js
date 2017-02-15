@@ -20,16 +20,22 @@ class Calculator {
 
 
     }
-    _parseInt(string){
+
+    _parseInt(string) {
         var value = parseInt(string);
-        if(this.isNegative(value)){
+        if (this.isNegative(value)) {
             return this.isNegative(value);
         }
         return value;
     }
 
-    isNegative(value){
-        if(value < 0){
+    isNegative(value) {
+        if (Array.isArray(value)) {
+            if (value.some(item => item < 0)) {
+                return 'negatives not allowed';
+            }
+        }
+        if (value < 0) {
             return 'negatives not allowed';
         }
         return false;
@@ -47,13 +53,13 @@ class Calculator {
 
     isDelimiterSeparateLine(string) {
         if (string.match(/^\/\//)) {
-                var delimiter = string[2];
-                var data = string.slice(4);
-                return {
-                    'delimiter': delimiter,
-                    'data': data
-                }
+            var delimiter = string[2];
+            var data = string.slice(4);
+            return {
+                'delimiter': delimiter,
+                'data': data
             }
+        }
         return false;
     }
 
@@ -67,6 +73,9 @@ class Calculator {
     parseMultSum(arr) {
 
         if (this.isNumbersArr(arr)) {
+            if(this.isNegative(arr)){
+                return this.isNegative(arr);
+            }
             return this.arrSum(arr);
         }
 
