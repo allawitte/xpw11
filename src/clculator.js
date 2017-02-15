@@ -22,7 +22,7 @@ class Calculator {
     }
 
     _delimiter(string) {
-        let parseObj = this.isDelimiterSeparateLIne(string);
+        let parseObj = this.isDelimiterSeparateLine(string);
         if (parseObj) {
             return parseObj.data.split(parseObj.delimiter);
 
@@ -31,7 +31,7 @@ class Calculator {
     }
 
 
-    isDelimiterSeparateLIne(string) {
+    isDelimiterSeparateLine(string) {
         let match = string.match(/^\/\//);
         if (match) {
                 var delimiter = string[2];
